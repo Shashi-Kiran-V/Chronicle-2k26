@@ -8,7 +8,8 @@ const events = [
     category: 'Arithmancy & Logic',
     icon: Code2,
     description: 'A unique programming contest intertwined with magical lore. Solve algorithmic challenges wrapped in intriguing Hogwarts narratives.',
-    color: 'emerald'
+    color: 'emerald',
+    konfhubUrl: 'https://konfhub.com/checkout/chronicle-2k26?ticketId=93750'
   },
   {
     id: 'epilogue',
@@ -16,7 +17,8 @@ const events = [
     category: 'Transfiguration',
     icon: MonitorPlay,
     description: 'A platform to showcase your innovative projects. Present your final transfigurations to our wizengamot jury and prove your worth.',
-    color: 'blue'
+    color: 'blue',
+    konfhubUrl: 'https://konfhub.com/checkout/chronicle-2k26?ticketId=93745'
   },
   {
     id: 'verbal-arena',
@@ -24,7 +26,8 @@ const events = [
     category: 'Charms & Debate',
     icon: MessageSquare,
     description: 'Cross wands with words. Participate in this fierce debate competition and demonstrate your rhetorical prowess on wizarding world topics.',
-    color: 'rose'
+    color: 'rose',
+    konfhubUrl: 'https://konfhub.com/checkout/chronicle-2k26?ticketId=93748'
   },
   {
     id: 'recraft',
@@ -32,7 +35,8 @@ const events = [
     category: 'Dark Arts Design',
     icon: Paintbrush,
     description: 'Unleash your creativity in our spellbook cover design competition. Redesign classic tomes or breathe life into new cursed texts.',
-    color: 'amber'
+    color: 'amber',
+    konfhubUrl: 'https://konfhub.com/checkout/chronicle-2k26?ticketId=93749'
   },
   {
     id: 'hidden-chapters',
@@ -40,7 +44,8 @@ const events = [
     category: 'Marauders Hunt',
     icon: Compass,
     description: 'A thrilling treasure hunt testing your wits. Solve cryptic runic clues hidden across the castle grounds to find the lost chapters.',
-    color: 'violet'
+    color: 'violet',
+    konfhubUrl: 'https://konfhub.com/checkout/chronicle-2k26?ticketId=93746'
   },
   {
     id: 'stories-untold',
@@ -48,7 +53,8 @@ const events = [
     category: 'Divination',
     icon: ImageIcon,
     description: 'A picture is worth a thousand spells. Perceive the subtle prophecies hidden within imagery and draft compelling, imaginative visions.',
-    color: 'teal'
+    color: 'teal',
+    konfhubUrl: 'https://konfhub.com/checkout/chronicle-2k26?ticketId=93747'
   }
 ];
 
@@ -93,8 +99,9 @@ const Events = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
 
   const handleEnrollment = (event) => {
-    // Enrollment logic to be added
-    console.log(`Enrolling in ${event.title}`);
+    if (event.konfhubUrl) {
+      window.open(event.konfhubUrl, '_blank', 'noopener,noreferrer');
+    }
   };
 
   React.useEffect(() => {
