@@ -9,6 +9,7 @@ import FAQ from './components/FAQ'
 import Footer from './components/Footer'
 import LoadingScreen from './components/LoadingScreen'
 import CustomCursor from './components/CustomCursor'
+import MagicBackground from './components/MagicBackground'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -17,13 +18,8 @@ function App() {
     <div className="relative min-h-screen scroll-smooth bg-hp-bg font-sans text-hp-text-light overflow-x-hidden cursor-none">
       <CustomCursor />
       
-      {/* Global Magical Starry Background */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-hp-ravenclaw/40 via-transparent to-transparent"></div>
-        {/* Animated slow pulse/shift effect to simulate twinkling sky */}
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-30 animate-pulse mix-blend-screen" style={{ animationDuration: '6s' }}></div>
-      </div>
+      {/* Global Magical Animated Background */}
+      <MagicBackground />
 
       <AnimatePresence mode="wait">
         {isLoading && <LoadingScreen key="loading" onLoadingComplete={() => setIsLoading(false)} />}
