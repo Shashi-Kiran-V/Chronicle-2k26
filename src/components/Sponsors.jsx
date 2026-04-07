@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const Sponsors = () => {
   return (
@@ -14,7 +15,13 @@ const Sponsors = () => {
           </p>
         </div>
 
-        <div className="relative z-10 w-full max-w-4xl mx-auto flex items-center justify-center py-16 border border-hp-gold-700/20 bg-hp-bg-card/50 rounded-lg">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="relative z-10 w-full max-w-4xl mx-auto flex items-center justify-center py-16 border border-hp-gold-700/20 bg-hp-bg-card/50 rounded-lg"
+        >
           <div className="text-center">
             <div className="w-16 h-16 mx-auto mb-4 bg-hp-bg-alt border border-hp-gold-700/30 rounded-full flex items-center justify-center shadow-inner">
               <span className="text-2xl text-hp-gold-500/50">?</span>
@@ -24,7 +31,7 @@ const Sponsors = () => {
               We are currently finalizing our alliances. The grand reveal is coming soon.
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

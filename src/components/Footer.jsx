@@ -1,5 +1,6 @@
 import React from 'react';
 import { Sparkles, MapPin, Mail, Phone } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Footer = () => {
   return (
@@ -10,10 +11,19 @@ const Footer = () => {
       <div className="absolute top-0 right-0 w-96 h-96 bg-hp-gold-500/5 blur-[120px] pointer-events-none rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
+          }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16"
+        >
           
           {/* Brand Column */}
-          <div className="lg:col-span-1">
+          <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="lg:col-span-1">
             <div className="flex items-center space-x-2 mb-6">
               <Sparkles className="w-8 h-8 text-hp-gold-500" />
               <span className="font-serif text-3xl font-bold text-hp-gold-300 tracking-wider">
@@ -26,10 +36,10 @@ const Footer = () => {
             <div className="text-hp-gold-500 italic font-serif text-sm">
               "Mischief Managed."
             </div>
-          </div>
+          </motion.div>
           
           {/* Quick Links Column */}
-          <div>
+          <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
             <h3 className="text-hp-gold-500 font-serif font-bold text-lg mb-6 uppercase tracking-widest text-sm relative inline-block">
               Portkeys (Links)
               <span className="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-hp-gold-700"></span>
@@ -40,10 +50,10 @@ const Footer = () => {
               <li><a href="#events" className="text-hp-text-muted hover:text-hp-gold-300 transition-colors flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-hp-gold-700 mr-2"></span> Challenges</a></li>
               <li><a href="#faq" className="text-hp-text-muted hover:text-hp-gold-300 transition-colors flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-hp-gold-700 mr-2"></span> Ministry FAQ</a></li>
             </ul>
-          </div>
+          </motion.div>
           
           {/* Contact Information Column */}
-          <div>
+          <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
             <h3 className="text-hp-gold-500 font-serif font-bold text-lg mb-6 uppercase tracking-widest text-sm relative inline-block">
               Owl Post (Contact)
               <span className="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-hp-gold-700"></span>
@@ -62,10 +72,10 @@ const Footer = () => {
                 <span>owls@thebookcult.edu</span>
               </li>
             </ul>
-          </div>
+          </motion.div>
           
           {/* Social Links Column */}
-          <div>
+          <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
             <h3 className="text-hp-gold-500 font-serif font-bold text-lg mb-6 uppercase tracking-widest text-sm relative inline-block">
               Daily Prophet (Social)
               <span className="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-hp-gold-700"></span>
@@ -84,9 +94,9 @@ const Footer = () => {
             <p className="text-xs text-hp-text-muted mt-6 font-sans">
               Follow us to get the latest editions delivered straight to you!
             </p>
-          </div>
+          </motion.div>
           
-        </div>
+        </motion.div>
         
         {/* Copyright Bar */}
         <div className="pt-8 border-t border-hp-gold-700/20 flex flex-col md:flex-row justify-between items-center px-2">

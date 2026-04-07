@@ -16,8 +16,8 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-14 h-14 rounded-full overflow-hidden border border-hp-gold-500/50 shadow-[0_0_10px_rgba(212,175,55,0.3)] flex items-center justify-center shrink-0">
-              <img src="/bookcult_logo.jpeg" alt="Bookcult Logo" className="w-full h-full object-cover scale-[1.5]" />
+            <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-hp-gold-500/50 shadow-[0_0_15px_rgba(212,175,55,0.4)] flex items-center justify-center shrink-0">
+              <img src="/bookcult_logo.jpeg" alt="Bookcult Logo" className="w-full h-full object-cover scale-[1.6]" />
             </div>
             <span className="font-serif text-2xl font-bold text-hp-gold-300 tracking-wider">
               The Bookcult

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BookOpen as Book, Code2, MonitorPlay, MessageSquare, Paintbrush, Compass, X, Download, UserPlus, Image as ImageIcon, Sparkles, Upload } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const events = [
   {
@@ -126,15 +127,28 @@ const Events = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div 
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+          }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           {events.map((event) => (
-            <EventCard 
-              key={event.id} 
-              event={event} 
-              onViewDetails={setSelectedEvent} 
-            />
+            <motion.div key={event.id} variants={{
+              hidden: { opacity: 0, y: 30 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+            }}>
+              <EventCard 
+                event={event} 
+                onViewDetails={setSelectedEvent} 
+              />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       {/* Modal Overlay */}
