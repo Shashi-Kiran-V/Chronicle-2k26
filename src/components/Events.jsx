@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BookOpen as Book, Code2, MonitorPlay, MessageSquare, Paintbrush, Compass, X, Download, UserPlus, Image as ImageIcon, Sparkles } from 'lucide-react';
+import { BookOpen as Book, Code2, MonitorPlay, MessageSquare, Paintbrush, Compass, X, Download, UserPlus, Image as ImageIcon, Sparkles, Upload } from 'lucide-react';
 
 const events = [
   {
@@ -177,19 +177,40 @@ const Events = () => {
                   </p>
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-4 mt-8 pt-6 border-t border-hp-gold-700/20">
+                <div className="flex flex-wrap flex-col sm:flex-row gap-4 mt-8 pt-6 border-t border-hp-gold-700/20">
                   <a 
                     href="#omniocular-rules" 
-                    className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-hp-bg-alt border border-hp-gold-700/50 text-hp-gold-300 font-serif hover:bg-hp-bg hover:border-hp-gold-500 transition-all shadow-md"
+                    className="flex-1 min-w-[200px] flex items-center justify-center gap-2 px-4 py-4 bg-hp-bg-alt border border-hp-gold-700/50 text-hp-gold-300 font-serif hover:bg-hp-bg hover:border-hp-gold-500 transition-all shadow-md text-sm md:text-base whitespace-nowrap"
                   >
-                    <Download className="w-5 h-5 opacity-80" />
+                    <Download className="w-5 h-5 opacity-80 shrink-0" />
                     Owl Brochure
                   </a>
+                  {selectedEvent.id === 'epilogue' && (
+                    <>
+                      <a 
+                        href="/Epilogue_Abstract_Template.docx" 
+                        download
+                        className="flex-1 min-w-[200px] flex items-center justify-center gap-2 px-4 py-4 bg-hp-bg-alt border border-hp-gold-700/50 text-hp-gold-300 font-serif hover:bg-hp-bg hover:border-hp-gold-500 transition-all shadow-md text-sm md:text-base whitespace-nowrap"
+                      >
+                        <Download className="w-5 h-5 opacity-80 shrink-0" />
+                        Download Abstract
+                      </a>
+                      <a 
+                        href="https://docs.google.com/forms" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex-1 min-w-[200px] flex items-center justify-center gap-2 px-4 py-4 bg-hp-bg-alt border border-hp-gold-700/50 text-hp-gold-300 font-serif hover:bg-hp-bg hover:border-hp-gold-500 transition-all shadow-md text-sm md:text-base whitespace-nowrap"
+                      >
+                        <Upload className="w-5 h-5 opacity-80 shrink-0" />
+                        Upload Abstract
+                      </a>
+                    </>
+                  )}
                   <button 
                     onClick={() => handleEnrollment(selectedEvent)}
-                    className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-hp-gold-500 text-hp-bg font-serif font-bold hover:bg-hp-gold-300 transition-all shadow-[0_0_15px_rgba(212,175,55,0.3)] hover:shadow-[0_0_20px_rgba(212,175,55,0.5)] cursor-pointer"
+                    className="flex-1 min-w-[200px] flex items-center justify-center gap-2 px-4 py-4 bg-hp-gold-500 text-hp-bg font-serif font-bold hover:bg-hp-gold-300 transition-all shadow-[0_0_15px_rgba(212,175,55,0.3)] hover:shadow-[0_0_20px_rgba(212,175,55,0.5)] cursor-pointer text-sm md:text-base whitespace-nowrap"
                   >
-                    <UserPlus className="w-5 h-5 opacity-90" />
+                    <UserPlus className="w-5 h-5 opacity-90 shrink-0" />
                     Enroll Now
                   </button>
                 </div>
