@@ -92,11 +92,9 @@ const EventCard = ({ event, onViewDetails }) => {
 const Events = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
 
-  const handleYepdeskRegistration = (event) => {
-    // Ideally, each event object in the `events` array would have its own specific yepdeskUrl.
-    // For now, we use a placeholder link to the Yepdesk homepage or you can replace it with your organization's Yepdesk link.
-    const yepdeskUrl = event.yepdeskUrl || "https://www.yepdesk.com/";
-    window.open(yepdeskUrl, '_blank', 'noopener,noreferrer');
+  const handleEnrollment = (event) => {
+    // Enrollment logic to be added
+    console.log(`Enrolling in ${event.title}`);
   };
 
   React.useEffect(() => {
@@ -181,7 +179,7 @@ const Events = () => {
                     Owl Brochure
                   </a>
                   <button 
-                    onClick={() => handleYepdeskRegistration(selectedEvent)}
+                    onClick={() => handleEnrollment(selectedEvent)}
                     className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-hp-gold-500 text-hp-bg font-serif font-bold hover:bg-hp-gold-300 transition-all shadow-[0_0_15px_rgba(212,175,55,0.3)] hover:shadow-[0_0_20px_rgba(212,175,55,0.5)] cursor-pointer"
                   >
                     <UserPlus className="w-5 h-5 opacity-90" />
