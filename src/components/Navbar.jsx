@@ -30,7 +30,7 @@ const Navbar = () => {
               <a 
                 key={link.name} 
                 href={link.href}
-                className="text-hp-text-light font-sans font-medium hover:text-hp-gold-500 transition-colors duration-300 relative group"
+                className="text-hp-text-light font-sans font-medium text-xl hover:text-hp-gold-500 transition-colors duration-300 relative group"
               >
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-hp-gold-500 transition-all duration-300 group-hover:w-full"></span>
@@ -58,7 +58,7 @@ const Navbar = () => {
               key={link.name} 
               href={link.href}
               onClick={() => setIsMenuOpen(false)}
-              className="text-lg font-sans font-medium text-hp-text-light hover:text-hp-gold-500 transition-colors"
+              className="text-2xl font-sans font-medium text-hp-text-light hover:text-hp-gold-500 transition-colors py-2"
             >
               {link.name}
             </a>
