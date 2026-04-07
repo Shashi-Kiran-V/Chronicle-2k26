@@ -15,8 +15,8 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <Sparkles className="w-7 h-7 text-hp-gold-500" />
+          <div className="flex items-center space-x-3">
+            <img src="/bookcult_logo.jpeg" alt="Bookcult Logo" className="w-10 h-10 rounded-full object-cover border border-hp-gold-500/50 shadow-[0_0_10px_rgba(212,175,55,0.3)]" />
             <span className="font-serif text-2xl font-bold text-hp-gold-300 tracking-wider">
               The Bookcult
             </span>
