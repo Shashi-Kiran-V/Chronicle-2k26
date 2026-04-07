@@ -50,7 +50,13 @@ const TimelineCard = ({ item, index }) => {
   const isEven = index % 2 === 0;
   
   return (
-    <div className="relative w-full mb-12 group">
+    <motion.div 
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="relative w-full mb-12 group"
+    >
       
       {/* Connector and Node */}
       <div className="absolute left-8 md:left-1/2 top-8 transform md:-translate-x-1/2 z-20 flex flex-col items-center">
@@ -73,7 +79,7 @@ const TimelineCard = ({ item, index }) => {
           </div>
         </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
