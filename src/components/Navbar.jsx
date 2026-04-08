@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Menu, X, Sparkles } from 'lucide-react';
 
-const Navbar = () => {
+const Navbar = ({ onContactClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'About Us', href: '#about-us' },
-    { name: 'Contact Us', href: '#contact-us' },
+    { name: 'Contact Us', href: '#contact-us', isContact: true },
   ];
 
   return (
@@ -26,16 +26,27 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8 items-center">
-            {navLinks.map((link) => (
-              <a 
-                key={link.name} 
-                href={link.href}
-                className="text-hp-text-light font-sans font-medium text-xl hover:text-hp-gold-500 transition-colors duration-300 relative group"
-              >
-                {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-hp-gold-500 transition-all duration-300 group-hover:w-full"></span>
-              </a>
-            ))}
+            {navLinks.map((link) =>
+              link.isContact ? (
+                <button
+                  key={link.name}
+                  onClick={onContactClick}
+                  className="text-hp-text-light font-sans font-medium text-xl hover:text-hp-gold-500 transition-colors duration-300 relative group"
+                >
+                  {link.name}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-hp-gold-500 transition-all duration-300 group-hover:w-full"></span>
+                </button>
+              ) : (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="text-hp-text-light font-sans font-medium text-xl hover:text-hp-gold-500 transition-colors duration-300 relative group"
+                >
+                  {link.name}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-hp-gold-500 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+              )
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -53,16 +64,29 @@ const Navbar = () => {
       {/* Mobile Menu Dropdown */}
       {isMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-hp-bg-alt shadow-lg border-t border-hp-gold-700/20 py-4 px-4 flex flex-col space-y-4">
-          {navLinks.map((link) => (
-            <a 
-              key={link.name} 
-              href={link.href}
-              onClick={() => setIsMenuOpen(false)}
-              className="text-2xl font-sans font-medium text-hp-text-light hover:text-hp-gold-500 transition-colors py-2"
-            >
-              {link.name}
-            </a>
-          ))}
+          {navLinks.map((link) =>
+            link.isContact ? (
+              <button
+                key={link.name}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  onContactClick();
+                }}
+                className="text-2xl font-sans font-medium text-hp-text-light hover:text-hp-gold-500 transition-colors py-2 text-left"
+              >
+                {link.name}
+              </button>
+            ) : (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsMenuOpen(false)}
+                className="text-2xl font-sans font-medium text-hp-text-light hover:text-hp-gold-500 transition-colors py-2"
+              >
+                {link.name}
+              </a>
+            )
+          )}
         </div>
       )}
     </nav>
