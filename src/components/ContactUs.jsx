@@ -131,11 +131,12 @@ const ContactUs = ({ isOpen, onClose }) => {
 
             {/* Close Button */}
             <button
-              onClick={() => {
+              onClick={(e) => {
+                e.stopPropagation();
                 onClose();
                 setErrors({});
               }}
-              className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-hp-bg/50 border border-hp-gold-700/30 flex items-center justify-center text-hp-text-muted hover:text-hp-gold-500 hover:border-hp-gold-500/50 hover:bg-hp-bg transition-all duration-300"
+              className="absolute top-4 right-4 z-50 w-9 h-9 rounded-full bg-hp-bg/50 border border-hp-gold-700/30 flex items-center justify-center text-hp-text-muted hover:text-hp-gold-500 hover:border-hp-gold-500/50 hover:bg-hp-bg transition-all duration-300 cursor-pointer"
             >
               <X className="w-4 h-4" />
             </button>

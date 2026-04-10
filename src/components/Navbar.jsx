@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Menu, X, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Navbar = ({ onContactClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About Us', href: '#about-us' },
+    { name: 'Home', href: '/' },
+    { name: 'About Us', href: '/about-us' },
     { name: 'Contact Us', href: '#contact-us', isContact: true },
   ];
 
@@ -15,14 +16,14 @@ const Navbar = ({ onContactClick }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
+          <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
             <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-hp-gold-500/50 shadow-[0_0_15px_rgba(212,175,55,0.4)] flex items-center justify-center shrink-0 bg-hp-bg">
               <img src="/bookcult_logo.jpeg" alt="Bookcult Logo" className="w-full h-full object-cover scale-[1.7]" />
             </div>
             <span className="font-serif text-2xl font-bold text-hp-gold-300 tracking-wider">
               The Bookcult
             </span>
-          </div>
+          </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8 items-center">
@@ -37,14 +38,14 @@ const Navbar = ({ onContactClick }) => {
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-hp-gold-500 transition-all duration-300 group-hover:w-full"></span>
                 </button>
               ) : (
-                <a
+                <Link
                   key={link.name}
-                  href={link.href}
+                  to={link.href}
                   className="text-hp-text-light font-sans font-medium text-xl hover:text-hp-gold-500 transition-colors duration-300 relative group"
                 >
                   {link.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-hp-gold-500 transition-all duration-300 group-hover:w-full"></span>
-                </a>
+                </Link>
               )
             )}
           </div>
@@ -77,14 +78,14 @@ const Navbar = ({ onContactClick }) => {
                 {link.name}
               </button>
             ) : (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
+                to={link.href}
                 onClick={() => setIsMenuOpen(false)}
                 className="text-2xl font-sans font-medium text-hp-text-light hover:text-hp-gold-500 transition-colors py-2"
               >
                 {link.name}
-              </a>
+              </Link>
             )
           )}
         </div>
