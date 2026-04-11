@@ -63,82 +63,68 @@ const Navbar = ({ onContactClick }) => {
               className="text-hp-gold-500 hover:text-hp-gold-300 focus:outline-none p-2"
               whileTap={{ scale: 0.95 }}
             >
-              <svg
-                className="w-7 h-7"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                {/* Top line - rotates to form top-left of X */}
-                <motion.line
-                  x1="3"
-                  y1="3"
-                  x2="21"
-                  y2="21"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  animate={{
-                    opacity: isMenuOpen ? 1 : 0,
-                    rotate: 0,
-                  }}
-                  transition={{ duration: 0.5, ease: 'easeInOut' }}
-                  style={{ transformOrigin: '12px 12px' }}
-                />
-                {/* Bottom line - rotates to form bottom-left of X */}
-                <motion.line
-                  x1="21"
-                  y1="3"
-                  x2="3"
-                  y2="21"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  animate={{
-                    opacity: isMenuOpen ? 1 : 0,
-                    rotate: 0,
-                  }}
-                  transition={{ duration: 0.5, ease: 'easeInOut' }}
-                  style={{ transformOrigin: '12px 12px' }}
-                />
-                {/* Top hamburger line */}
-                <motion.line
-                  x1="4"
-                  y1="6"
-                  x2="20"
-                  y2="6"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  animate={{
-                    opacity: isMenuOpen ? 0 : 1,
-                  }}
-                  transition={{ duration: 0.5, ease: 'easeInOut' }}
-                />
-                {/* Middle hamburger line */}
-                <motion.line
-                  x1="4"
-                  y1="12"
-                  x2="20"
-                  y2="12"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  animate={{ 
-                    opacity: isMenuOpen ? 0 : 1,
-                  }}
-                  transition={{ duration: 0.3 }}
-                />
-                {/* Bottom hamburger line */}
-                <motion.line
-                  x1="4"
-                  y1="18"
-                  x2="20"
-                  y2="18"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  animate={{
-                    opacity: isMenuOpen ? 0 : 1,
-                  }}
-                  transition={{ duration: 0.5, ease: 'easeInOut' }}
-                />
-              </svg>
+              {isMenuOpen ? (
+                <svg
+                  className="w-7 h-7"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <motion.line
+                    x1="4" y1="4" x2="20" y2="20"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                  <motion.line
+                    x1="20" y1="4" x2="4" y2="20"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </svg>
+              ) : (
+                <svg
+                  className="w-7 h-7"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <motion.line
+                    x1="4" y1="6" x2="20" y2="6"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                  <motion.line
+                    x1="4" y1="12" x2="20" y2="12"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                  <motion.line
+                    x1="4" y1="18" x2="20" y2="18"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </svg>
+              )}
             </motion.button>
           </div>
         </div>
