@@ -90,8 +90,7 @@ const Hero = () => {
               <motion.a 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                href="#events"
-                onClick={(e) => { e.preventDefault(); document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' }); }}
+                href="#events" 
                 className="group relative inline-flex items-center justify-center px-10 py-4 text-xl font-serif font-bold text-hp-bg border border-hp-gold-500 bg-hp-gold-500 rounded hover:bg-hp-gold-300 hover:border-hp-gold-300 transition-all shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:shadow-[0_0_30px_rgba(212,175,55,0.6)]"
               >
                 <span className="relative flex items-center">

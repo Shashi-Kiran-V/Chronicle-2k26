@@ -131,21 +131,12 @@ const ContactUs = ({ isOpen, onClose }) => {
 
             {/* Close Button */}
             <button
-<<<<<<< HEAD
-=======
-              type="button"
->>>>>>> 6a9471eebaaed409d44ee62ddb0f2aac57a58870
               onClick={(e) => {
                 e.stopPropagation();
                 onClose();
                 setErrors({});
               }}
-<<<<<<< HEAD
               className="absolute top-4 right-4 z-50 w-9 h-9 rounded-full bg-hp-bg/50 border border-hp-gold-700/30 flex items-center justify-center text-hp-text-muted hover:text-hp-gold-500 hover:border-hp-gold-500/50 hover:bg-hp-bg transition-all duration-300 cursor-pointer"
-=======
-              className="absolute top-2 right-0 md:top-4 md:right-6 z-[60] w-8 h-8 rounded-full bg-hp-bg/80 border border-hp-gold-500/50 flex items-center justify-center text-hp-gold-400 hover:text-hp-gold-300 hover:border-hp-gold-400 hover:bg-hp-bg/95 transition-all duration-300 pointer-events-auto cursor-pointer flex-shrink-0"
-              aria-label="Close contact form"
->>>>>>> 6a9471eebaaed409d44ee62ddb0f2aac57a58870
             >
               <X className="w-4 h-4" />
             </button>
@@ -159,7 +150,7 @@ const ContactUs = ({ isOpen, onClose }) => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
               >
-                <h2 className="font-serif text-xl sm:text-2xl md:text-3xl text-hp-gold-300 mb-2 tracking-wide whitespace-nowrap">
+                <h2 className="font-serif text-2xl md:text-3xl text-hp-gold-300 mb-2 tracking-wide">
                   ✦ Send Us an Owl ✦
                 </h2>
                 <p className="text-hp-text-muted font-sans text-sm">

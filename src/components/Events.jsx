@@ -193,8 +193,7 @@ const Events = () => {
 
                 <div className="flex flex-wrap flex-col sm:flex-row gap-4 mt-8 pt-6 border-t border-hp-gold-700/20">
                   <a 
-                    href="#omniocular-rules"
-                    onClick={(e) => e.preventDefault()}
+                    href="#omniocular-rules" 
                     className="flex-1 min-w-[200px] flex items-center justify-center gap-2 px-4 py-4 bg-hp-bg-alt border border-hp-gold-700/50 text-hp-gold-300 font-serif hover:bg-hp-bg hover:border-hp-gold-500 transition-all shadow-md text-sm md:text-base whitespace-nowrap"
                   >
                     <Download className="w-5 h-5 opacity-80 shrink-0" />
