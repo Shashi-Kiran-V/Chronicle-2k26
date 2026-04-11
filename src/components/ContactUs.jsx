@@ -152,7 +152,7 @@ const ContactUs = ({ isOpen, onClose }) => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
               >
-                <h2 className="font-serif text-2xl md:text-3xl text-hp-gold-300 mb-2 tracking-wide">
+                <h2 className="font-serif text-xl sm:text-2xl md:text-3xl text-hp-gold-300 mb-2 tracking-wide whitespace-nowrap">
                   ✦ Send Us an Owl ✦
                 </h2>
                 <p className="text-hp-text-muted font-sans text-sm">
