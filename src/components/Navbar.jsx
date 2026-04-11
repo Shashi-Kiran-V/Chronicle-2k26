@@ -140,6 +140,27 @@ const Navbar = ({ onContactClick }) => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4, ease: 'easeInOut' }}
           >
+            {/* Close Button - Always Visible */}
+            <motion.button
+              onClick={() => setIsMenuOpen(false)}
+              className="absolute top-6 right-6 z-[60] text-hp-gold-500 hover:text-hp-gold-300 focus:outline-none p-2"
+              whileTap={{ scale: 0.95 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <svg
+                className="w-8 h-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <line x1="4" y1="4" x2="20" y2="20" strokeWidth="2.5" strokeLinecap="round" />
+                <line x1="20" y1="4" x2="4" y2="20" strokeWidth="2.5" strokeLinecap="round" />
+              </svg>
+            </motion.button>
+
             {/* Menu Links Container */}
             <motion.div 
               className="flex flex-col w-full max-w-sm"
