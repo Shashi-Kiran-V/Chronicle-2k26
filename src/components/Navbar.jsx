@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = ({ onContactClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -50,47 +51,19 @@ const Navbar = ({ onContactClick }) => {
             )}
           </div>
 
-          {/* Mobile Menu Button - Custom Animated Hamburger */}
+          {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
             <motion.button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-hp-gold-500 hover:text-hp-gold-300 focus:outline-none p-2"
               whileTap={{ scale: 0.95 }}
             >
-              <svg
-                className="w-7 h-7"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+              <motion.div
+                animate={{ rotate: isMenuOpen ? 90 : 0 }}
+                transition={{ duration: 0.3 }}
               >
-                <motion.line
-                  x1="4" y1="6" x2="20" y2="6"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                />
-                <motion.line
-                  x1="4" y1="12" x2="20" y2="12"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                />
-                <motion.line
-                  x1="4" y1="18" x2="20" y2="18"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                />
-              </svg>
+                {isMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+              </motion.div>
             </motion.button>
           </div>
         </div>
@@ -116,15 +89,7 @@ const Navbar = ({ onContactClick }) => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <svg
-                className="w-8 h-8"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <line x1="4" y1="4" x2="20" y2="20" strokeWidth="2.5" strokeLinecap="round" />
-                <line x1="20" y1="4" x2="4" y2="20" strokeWidth="2.5" strokeLinecap="round" />
-              </svg>
+              <X className="w-8 h-8" />
             </motion.button>
 
             {/* Menu Links Container */}
