@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Menu, X, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = ({ onContactClick }) => {
@@ -57,20 +56,61 @@ const Navbar = ({ onContactClick }) => {
             )}
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - Custom Animated Hamburger */}
           <div className="md:hidden flex items-center">
             <motion.button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-hp-gold-500 hover:text-hp-gold-300 transition-colors focus:outline-none"
-              whileTap={{ scale: 0.9 }}
-              transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+              className="text-hp-gold-500 hover:text-hp-gold-300 focus:outline-none p-2"
+              whileTap={{ scale: 0.95 }}
             >
-              <motion.div
-                animate={{ rotate: isMenuOpen ? 90 : 0 }}
-                transition={{ duration: 0.3 }}
+              <svg
+                className="w-7 h-7"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
               >
-                {isMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
-              </motion.div>
+                {/* Top line */}
+                <motion.line
+                  x1="4"
+                  y1="6"
+                  x2="20"
+                  y2="6"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  animate={{
+                    rotate: isMenuOpen ? 45 : 0,
+                    y: isMenuOpen ? 8 : 0,
+                  }}
+                  transition={{ duration: 0.5, ease: 'easeInOut' }}
+                  style={{ transformOrigin: '12px 6px' }}
+                />
+                {/* Middle line */}
+                <motion.line
+                  x1="4"
+                  y1="12"
+                  x2="20"
+                  y2="12"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  animate={{ opacity: isMenuOpen ? 0 : 1 }}
+                  transition={{ duration: 0.3 }}
+                />
+                {/* Bottom line */}
+                <motion.line
+                  x1="4"
+                  y1="18"
+                  x2="20"
+                  y2="18"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  animate={{
+                    rotate: isMenuOpen ? -45 : 0,
+                    y: isMenuOpen ? -8 : 0,
+                  }}
+                  transition={{ duration: 0.5, ease: 'easeInOut' }}
+                  style={{ transformOrigin: '12px 18px' }}
+                />
+              </svg>
             </motion.button>
           </div>
         </div>
@@ -81,54 +121,60 @@ const Navbar = ({ onContactClick }) => {
         {isMenuOpen && (
           <motion.div
             className="md:hidden fixed top-0 left-0 w-full h-screen bg-hp-bg z-[49] overflow-y-auto flex flex-col justify-center items-center px-4"
-            initial={{ opacity: 0, y: -100 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -100 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4, ease: 'easeInOut' }}
           >
-            {/* Close button in menu */}
-            <button
-              onClick={() => setIsMenuOpen(false)}
-              className="absolute top-4 right-4 text-hp-gold-500 hover:text-hp-gold-300 transition-colors"
+            {/* Menu Links Container */}
+            <motion.div 
+              className="flex flex-col w-full max-w-sm"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ delay: 0.1, duration: 0.4 }}
             >
-              <X className="w-8 h-8" />
-            </button>
-
-            {/* Menu Links */}
-            <div className="flex flex-col space-y-8 text-center">
-              {navLinks.map((link, index) =>
-                link.isContact ? (
-                  <motion.button
-                    key={link.name}
-                    onClick={() => {
-                      setIsMenuOpen(false);
-                      onContactClick();
-                    }}
-                    className="text-4xl font-serif font-bold text-hp-gold-300 hover:text-hp-gold-500 transition-colors"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1, duration: 0.3 }}
-                  >
-                    {link.name}
-                  </motion.button>
-                ) : (
-                  <motion.a
-                    key={link.name}
-                    href={`#${link.sectionId}`}
-                    onClick={(e) => {
-                      scrollToSection(e, link.sectionId);
-                      setIsMenuOpen(false);
-                    }}
-                    className="text-4xl font-serif font-bold text-hp-gold-300 hover:text-hp-gold-500 transition-colors"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1, duration: 0.3 }}
-                  >
-                    {link.name}
-                  </motion.a>
-                )
-              )}
-            </div>
+              {navLinks.map((link, index) => (
+                <motion.div key={link.name} className="w-full">
+                  {link.isContact ? (
+                    <motion.button
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        onContactClick();
+                      }}
+                      className="w-full text-center py-6 text-3xl font-serif font-bold text-hp-gold-300 hover:text-hp-gold-500 transition-colors"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      {link.name}
+                    </motion.button>
+                  ) : (
+                    <motion.a
+                      href={`#${link.sectionId}`}
+                      onClick={(e) => {
+                        scrollToSection(e, link.sectionId);
+                        setIsMenuOpen(false);
+                      }}
+                      className="block w-full text-center py-6 text-3xl font-serif font-bold text-hp-gold-300 hover:text-hp-gold-500 transition-colors"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      {link.name}
+                    </motion.a>
+                  )}
+                  {/* Divider line - except for last item */}
+                  {index < navLinks.length - 1 && (
+                    <motion.div
+                      className="h-px bg-gradient-to-r from-transparent via-hp-gold-500/30 to-transparent w-full"
+                      initial={{ scaleX: 0 }}
+                      animate={{ scaleX: 1 }}
+                      transition={{ delay: 0.2 + index * 0.1, duration: 0.5 }}
+                      style={{ transformOrigin: 'center' }}
+                    />
+                  )}
+                </motion.div>
+              ))}
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
