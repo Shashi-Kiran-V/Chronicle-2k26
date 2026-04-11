@@ -69,46 +69,74 @@ const Navbar = ({ onContactClick }) => {
                 stroke="currentColor"
                 viewBox="0 0 24 24"
               >
-                {/* Top line */}
+                {/* Top line - rotates to form top-left of X */}
+                <motion.line
+                  x1="3"
+                  y1="3"
+                  x2="21"
+                  y2="21"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  animate={{
+                    opacity: isMenuOpen ? 1 : 0,
+                    rotate: 0,
+                  }}
+                  transition={{ duration: 0.5, ease: 'easeInOut' }}
+                  style={{ transformOrigin: '12px 12px' }}
+                />
+                {/* Bottom line - rotates to form bottom-left of X */}
+                <motion.line
+                  x1="21"
+                  y1="3"
+                  x2="3"
+                  y2="21"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  animate={{
+                    opacity: isMenuOpen ? 1 : 0,
+                    rotate: 0,
+                  }}
+                  transition={{ duration: 0.5, ease: 'easeInOut' }}
+                  style={{ transformOrigin: '12px 12px' }}
+                />
+                {/* Top hamburger line */}
                 <motion.line
                   x1="4"
                   y1="6"
                   x2="20"
                   y2="6"
-                  strokeWidth="2"
+                  strokeWidth="2.5"
                   strokeLinecap="round"
                   animate={{
-                    rotate: isMenuOpen ? 45 : 0,
-                    y: isMenuOpen ? 8 : 0,
+                    opacity: isMenuOpen ? 0 : 1,
                   }}
                   transition={{ duration: 0.5, ease: 'easeInOut' }}
-                  style={{ transformOrigin: '12px 6px' }}
                 />
-                {/* Middle line */}
+                {/* Middle hamburger line */}
                 <motion.line
                   x1="4"
                   y1="12"
                   x2="20"
                   y2="12"
-                  strokeWidth="2"
+                  strokeWidth="2.5"
                   strokeLinecap="round"
-                  animate={{ opacity: isMenuOpen ? 0 : 1 }}
+                  animate={{ 
+                    opacity: isMenuOpen ? 0 : 1,
+                  }}
                   transition={{ duration: 0.3 }}
                 />
-                {/* Bottom line */}
+                {/* Bottom hamburger line */}
                 <motion.line
                   x1="4"
                   y1="18"
                   x2="20"
                   y2="18"
-                  strokeWidth="2"
+                  strokeWidth="2.5"
                   strokeLinecap="round"
                   animate={{
-                    rotate: isMenuOpen ? -45 : 0,
-                    y: isMenuOpen ? -8 : 0,
+                    opacity: isMenuOpen ? 0 : 1,
                   }}
                   transition={{ duration: 0.5, ease: 'easeInOut' }}
-                  style={{ transformOrigin: '12px 18px' }}
                 />
               </svg>
             </motion.button>
