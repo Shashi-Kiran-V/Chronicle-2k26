@@ -137,7 +137,7 @@ const ContactUs = ({ isOpen, onClose }) => {
                 onClose();
                 setErrors({});
               }}
-              className="absolute top-2 -right-4 md:top-4 md:right-2 z-[60] w-8 h-8 rounded-full bg-hp-bg/80 border border-hp-gold-500/50 flex items-center justify-center text-hp-gold-400 hover:text-hp-gold-300 hover:border-hp-gold-400 hover:bg-hp-bg/95 transition-all duration-300 pointer-events-auto cursor-pointer flex-shrink-0"
+              className="absolute top-2 right-0 md:top-4 md:right-6 z-[60] w-8 h-8 rounded-full bg-hp-bg/80 border border-hp-gold-500/50 flex items-center justify-center text-hp-gold-400 hover:text-hp-gold-300 hover:border-hp-gold-400 hover:bg-hp-bg/95 transition-all duration-300 pointer-events-auto cursor-pointer flex-shrink-0"
               aria-label="Close contact form"
             >
               <X className="w-4 h-4" />
@@ -147,12 +147,12 @@ const ContactUs = ({ isOpen, onClose }) => {
             <div className="relative z-10 px-8 py-8">
               {/* Header */}
               <motion.div
-                className="text-center mb-8 pr-10"
+                className="text-center mb-8"
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
               >
-                <h2 className="font-serif text-2xl md:text-3xl text-hp-gold-300 mb-2 tracking-wide whitespace-nowrap overflow-hidden text-ellipsis">
+                <h2 className="font-serif text-2xl md:text-3xl text-hp-gold-300 mb-2 tracking-wide">
                   ✦ Send Us an Owl ✦
                 </h2>
                 <p className="text-hp-text-muted font-sans text-sm">
