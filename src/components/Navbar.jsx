@@ -1,15 +1,31 @@
 import React, { useState } from 'react';
+<<<<<<< HEAD
 import { Menu, X, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
+=======
+import { motion, AnimatePresence } from 'framer-motion';
+>>>>>>> 6a9471eebaaed409d44ee62ddb0f2aac57a58870
 
 const Navbar = ({ onContactClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
+<<<<<<< HEAD
     { name: 'Home', href: '/' },
     { name: 'About Us', href: '/about-us' },
     { name: 'Contact Us', href: '#contact-us', isContact: true },
+=======
+    { name: 'Home', sectionId: 'home' },
+    { name: 'About Us', sectionId: 'about-us' },
+    { name: 'Contact Us', sectionId: 'contact-us', isContact: true },
+>>>>>>> 6a9471eebaaed409d44ee62ddb0f2aac57a58870
   ];
+
+  const scrollToSection = (e, sectionId) => {
+    e.preventDefault();
+    const el = document.getElementById(sectionId);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <nav className="fixed w-full z-50 bg-hp-bg-card/90 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.5)] border-b border-hp-gold-700/20 py-2 transition-all">
@@ -40,7 +56,12 @@ const Navbar = ({ onContactClick }) => {
               ) : (
                 <Link
                   key={link.name}
+<<<<<<< HEAD
                   to={link.href}
+=======
+                  href={`#${link.sectionId}`}
+                  onClick={(e) => scrollToSection(e, link.sectionId)}
+>>>>>>> 6a9471eebaaed409d44ee62ddb0f2aac57a58870
                   className="text-hp-text-light font-sans font-medium text-xl hover:text-hp-gold-500 transition-colors duration-300 relative group"
                 >
                   {link.name}
@@ -50,31 +71,79 @@ const Navbar = ({ onContactClick }) => {
             )}
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - Custom Animated Hamburger */}
           <div className="md:hidden flex items-center">
-            <button 
+            <motion.button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-hp-gold-500 hover:text-hp-gold-300 transition-colors focus:outline-none"
+              className="text-hp-gold-500 hover:text-hp-gold-300 focus:outline-none p-2"
+              whileTap={{ scale: 0.95 }}
             >
-              {isMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
-            </button>
+              <svg
+                className="w-7 h-7"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <motion.line
+                  x1="4" y1="6" x2="20" y2="6"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                />
+                <motion.line
+                  x1="4" y1="12" x2="20" y2="12"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                />
+                <motion.line
+                  x1="4" y1="18" x2="20" y2="18"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                />
+              </svg>
+            </motion.button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
-      {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-hp-bg-alt shadow-lg border-t border-hp-gold-700/20 py-4 px-4 flex flex-col space-y-4">
-          {navLinks.map((link) =>
-            link.isContact ? (
-              <button
-                key={link.name}
-                onClick={() => {
-                  setIsMenuOpen(false);
-                  onContactClick();
-                }}
-                className="text-2xl font-sans font-medium text-hp-text-light hover:text-hp-gold-500 transition-colors py-2 text-left"
+      {/* Mobile Menu Dropdown - Full Screen */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            className="md:hidden fixed top-0 left-0 w-full h-screen bg-hp-bg z-[49] overflow-y-auto flex flex-col justify-center items-center px-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4, ease: 'easeInOut' }}
+          >
+            {/* Close Button - Always Visible */}
+            <motion.button
+              onClick={() => setIsMenuOpen(false)}
+              className="absolute top-6 right-6 z-[60] text-hp-gold-500 hover:text-hp-gold-300 focus:outline-none p-2"
+              whileTap={{ scale: 0.95 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <svg
+                className="w-8 h-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
               >
+<<<<<<< HEAD
                 {link.name}
               </button>
             ) : (
@@ -90,6 +159,65 @@ const Navbar = ({ onContactClick }) => {
           )}
         </div>
       )}
+=======
+                <line x1="4" y1="4" x2="20" y2="20" strokeWidth="2.5" strokeLinecap="round" />
+                <line x1="20" y1="4" x2="4" y2="20" strokeWidth="2.5" strokeLinecap="round" />
+              </svg>
+            </motion.button>
+
+            {/* Menu Links Container */}
+            <motion.div 
+              className="flex flex-col w-full max-w-sm"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ delay: 0.1, duration: 0.4 }}
+            >
+              {navLinks.map((link, index) => (
+                <motion.div key={link.name} className="w-full">
+                  {link.isContact ? (
+                    <motion.button
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        onContactClick();
+                      }}
+                      className="w-full text-center py-6 text-3xl font-serif font-bold text-hp-gold-300 hover:text-hp-gold-500 transition-colors"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      {link.name}
+                    </motion.button>
+                  ) : (
+                    <motion.a
+                      href={`#${link.sectionId}`}
+                      onClick={(e) => {
+                        scrollToSection(e, link.sectionId);
+                        setIsMenuOpen(false);
+                      }}
+                      className="block w-full text-center py-6 text-3xl font-serif font-bold text-hp-gold-300 hover:text-hp-gold-500 transition-colors"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      {link.name}
+                    </motion.a>
+                  )}
+                  {/* Divider line - except for last item */}
+                  {index < navLinks.length - 1 && (
+                    <motion.div
+                      className="h-px bg-gradient-to-r from-transparent via-hp-gold-500/30 to-transparent w-full"
+                      initial={{ scaleX: 0 }}
+                      animate={{ scaleX: 1 }}
+                      transition={{ delay: 0.2 + index * 0.1, duration: 0.5 }}
+                      style={{ transformOrigin: 'center' }}
+                    />
+                  )}
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+>>>>>>> 6a9471eebaaed409d44ee62ddb0f2aac57a58870
     </nav>
   );
 };
