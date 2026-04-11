@@ -131,13 +131,16 @@ const ContactUs = ({ isOpen, onClose }) => {
 
             {/* Close Button */}
             <button
-              onClick={() => {
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
                 onClose();
                 setErrors({});
               }}
-              className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-hp-bg/50 border border-hp-gold-700/30 flex items-center justify-center text-hp-text-muted hover:text-hp-gold-500 hover:border-hp-gold-500/50 hover:bg-hp-bg transition-all duration-300"
+              className="absolute top-4 right-4 z-[60] w-10 h-10 rounded-full bg-hp-bg/80 border border-hp-gold-500/50 flex items-center justify-center text-hp-gold-400 hover:text-hp-gold-300 hover:border-hp-gold-400 hover:bg-hp-bg/95 transition-all duration-300 pointer-events-auto cursor-pointer flex-shrink-0"
+              aria-label="Close contact form"
             >
-              <X className="w-4 h-4" />
+              <X className="w-5 h-5" />
             </button>
 
             {/* Form Content */}
