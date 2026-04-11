@@ -137,7 +137,7 @@ const ContactUs = ({ isOpen, onClose }) => {
                 onClose();
                 setErrors({});
               }}
-              className="absolute top-4 right-4 md:right-6 z-[60] w-10 h-10 rounded-full bg-hp-bg/80 border border-hp-gold-500/50 flex items-center justify-center text-hp-gold-400 hover:text-hp-gold-300 hover:border-hp-gold-400 hover:bg-hp-bg/95 transition-all duration-300 pointer-events-auto cursor-pointer flex-shrink-0"
+              className="absolute top-2 right-0 md:top-4 md:right-6 z-[60] w-10 h-10 rounded-full bg-hp-bg/80 border border-hp-gold-500/50 flex items-center justify-center text-hp-gold-400 hover:text-hp-gold-300 hover:border-hp-gold-400 hover:bg-hp-bg/95 transition-all duration-300 pointer-events-auto cursor-pointer flex-shrink-0"
               aria-label="Close contact form"
             >
               <X className="w-5 h-5" />
