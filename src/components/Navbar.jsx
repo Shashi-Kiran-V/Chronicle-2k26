@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X, Sparkles } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = ({ onContactClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -58,44 +59,79 @@ const Navbar = ({ onContactClick }) => {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
-            <button 
+            <motion.button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-hp-gold-500 hover:text-hp-gold-300 transition-colors focus:outline-none"
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 17 }}
             >
-              {isMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
-            </button>
+              <motion.div
+                animate={{ rotate: isMenuOpen ? 90 : 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                {isMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+              </motion.div>
+            </motion.button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
-      {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-hp-bg-alt shadow-lg border-t border-hp-gold-700/20 py-4 px-4 flex flex-col space-y-4">
-          {navLinks.map((link) =>
-            link.isContact ? (
-              <button
-                key={link.name}
-                onClick={() => {
-                  setIsMenuOpen(false);
-                  onContactClick();
-                }}
-                className="text-2xl font-sans font-medium text-hp-text-light hover:text-hp-gold-500 transition-colors py-2 text-left"
-              >
-                {link.name}
-              </button>
-            ) : (
-              <a
-                key={link.name}
-                href={`#${link.sectionId}`}
-                onClick={(e) => { scrollToSection(e, link.sectionId); setIsMenuOpen(false); }}
-                className="text-2xl font-sans font-medium text-hp-text-light hover:text-hp-gold-500 transition-colors py-2"
-              >
-                {link.name}
-              </a>
-            )
-          )}
-        </div>
-      )}
+      {/* Mobile Menu Dropdown - Full Screen */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            className="md:hidden fixed top-0 left-0 w-full h-screen bg-hp-bg z-[49] overflow-y-auto flex flex-col justify-center items-center px-4"
+            initial={{ opacity: 0, y: -100 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -100 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+          >
+            {/* Close button in menu */}
+            <button
+              onClick={() => setIsMenuOpen(false)}
+              className="absolute top-4 right-4 text-hp-gold-500 hover:text-hp-gold-300 transition-colors"
+            >
+              <X className="w-8 h-8" />
+            </button>
+
+            {/* Menu Links */}
+            <div className="flex flex-col space-y-8 text-center">
+              {navLinks.map((link, index) =>
+                link.isContact ? (
+                  <motion.button
+                    key={link.name}
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      onContactClick();
+                    }}
+                    className="text-4xl font-serif font-bold text-hp-gold-300 hover:text-hp-gold-500 transition-colors"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1, duration: 0.3 }}
+                  >
+                    {link.name}
+                  </motion.button>
+                ) : (
+                  <motion.a
+                    key={link.name}
+                    href={`#${link.sectionId}`}
+                    onClick={(e) => {
+                      scrollToSection(e, link.sectionId);
+                      setIsMenuOpen(false);
+                    }}
+                    className="text-4xl font-serif font-bold text-hp-gold-300 hover:text-hp-gold-500 transition-colors"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1, duration: 0.3 }}
+                  >
+                    {link.name}
+                  </motion.a>
+                )
+              )}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };
