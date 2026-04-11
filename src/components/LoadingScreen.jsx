@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Wand2 } from 'lucide-react';
-import logoImage from '../../public/bookcult_logo.jpeg';
+import logoImage from '../assets/bookcult_logo.jpeg';
 
 const LoadingScreen = ({ onLoadingComplete }) => {
   const [progress, setProgress] = useState(0);
