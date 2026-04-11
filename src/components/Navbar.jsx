@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import logoImage from '../../public/bookcult_logo.jpeg';
 
 const Navbar = ({ onContactClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,7 +20,7 @@ const Navbar = ({ onContactClick }) => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
             <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-hp-gold-500/50 shadow-[0_0_15px_rgba(212,175,55,0.4)] flex items-center justify-center shrink-0 bg-hp-bg">
-              <img src="/bookcult_logo.jpeg" alt="Bookcult Logo" className="w-full h-full object-cover scale-[1.7]" />
+              <img src={logoImage} alt="Bookcult Logo" className="w-full h-full object-cover scale-[1.7]" />
             </div>
             <span className="font-serif text-2xl font-bold text-hp-gold-300 tracking-wider">
               The Bookcult
