@@ -45,7 +45,7 @@ const LoadingScreen = ({ onLoadingComplete }) => {
         >
           <div className="absolute inset-0 bg-hp-gold-500 blur-[30px] opacity-20 rounded-full animate-pulse scale-150"></div>
           <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-hp-gold-500/50 shadow-[0_0_20px_rgba(212,175,55,0.4)] flex items-center justify-center shrink-0 relative z-10">
-            <img src={logoImage} alt="Loading Bookcult" className="w-full h-full object-cover object-center scale-125" />
+            <img src={logoImage} alt="Loading Bookcult" className="w-full h-full object-cover object-center scale-150" />
           </div>
         </motion.div>
         
