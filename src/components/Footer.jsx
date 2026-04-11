@@ -3,6 +3,12 @@ import { Sparkles, MapPin, Mail, Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Footer = () => {
+  const scrollToSection = (e, sectionId) => {
+    e.preventDefault();
+    const el = document.getElementById(sectionId);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <footer id="contact-us" className="bg-[#05080c] text-hp-text-light pt-20 pb-10 border-t border-hp-gold-500/20 relative overflow-hidden">
       
@@ -36,10 +42,10 @@ const Footer = () => {
               <span className="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-hp-gold-700"></span>
             </h3>
             <ul className="space-y-4 font-sans text-sm">
-              <li><a href="#home" className="text-hp-text-muted hover:text-hp-gold-300 transition-colors flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-hp-gold-700 mr-2"></span> Home</a></li>
-              <li><a href="#about-us" className="text-hp-text-muted hover:text-hp-gold-300 transition-colors flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-hp-gold-700 mr-2"></span> About Us</a></li>
-              <li><a href="#events" className="text-hp-text-muted hover:text-hp-gold-300 transition-colors flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-hp-gold-700 mr-2"></span> Challenges</a></li>
-              <li><a href="#faq" className="text-hp-text-muted hover:text-hp-gold-300 transition-colors flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-hp-gold-700 mr-2"></span> Ministry FAQ</a></li>
+              <li><a href="#home" onClick={(e) => scrollToSection(e, 'home')} className="text-hp-text-muted hover:text-hp-gold-300 transition-colors flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-hp-gold-700 mr-2"></span> Home</a></li>
+              <li><a href="#about-us" onClick={(e) => scrollToSection(e, 'about-us')} className="text-hp-text-muted hover:text-hp-gold-300 transition-colors flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-hp-gold-700 mr-2"></span> About Us</a></li>
+              <li><a href="#events" onClick={(e) => scrollToSection(e, 'events')} className="text-hp-text-muted hover:text-hp-gold-300 transition-colors flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-hp-gold-700 mr-2"></span> Challenges</a></li>
+              <li><a href="#faq" onClick={(e) => scrollToSection(e, 'faq')} className="text-hp-text-muted hover:text-hp-gold-300 transition-colors flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-hp-gold-700 mr-2"></span> Ministry FAQ</a></li>
             </ul>
           </div>
           

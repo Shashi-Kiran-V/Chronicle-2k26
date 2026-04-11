@@ -5,10 +5,16 @@ const Navbar = ({ onContactClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About Us', href: '#about-us' },
-    { name: 'Contact Us', href: '#contact-us', isContact: true },
+    { name: 'Home', sectionId: 'home' },
+    { name: 'About Us', sectionId: 'about-us' },
+    { name: 'Contact Us', sectionId: 'contact-us', isContact: true },
   ];
+
+  const scrollToSection = (e, sectionId) => {
+    e.preventDefault();
+    const el = document.getElementById(sectionId);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <nav className="fixed w-full z-50 bg-hp-bg-card/90 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.5)] border-b border-hp-gold-700/20 py-2 transition-all">
@@ -39,7 +45,8 @@ const Navbar = ({ onContactClick }) => {
               ) : (
                 <a
                   key={link.name}
-                  href={link.href}
+                  href={`#${link.sectionId}`}
+                  onClick={(e) => scrollToSection(e, link.sectionId)}
                   className="text-hp-text-light font-sans font-medium text-xl hover:text-hp-gold-500 transition-colors duration-300 relative group"
                 >
                   {link.name}
@@ -79,8 +86,8 @@ const Navbar = ({ onContactClick }) => {
             ) : (
               <a
                 key={link.name}
-                href={link.href}
-                onClick={() => setIsMenuOpen(false)}
+                href={`#${link.sectionId}`}
+                onClick={(e) => { scrollToSection(e, link.sectionId); setIsMenuOpen(false); }}
                 className="text-2xl font-sans font-medium text-hp-text-light hover:text-hp-gold-500 transition-colors py-2"
               >
                 {link.name}
