@@ -148,20 +148,25 @@ const EventCard = ({ event, onViewDetails }) => {
 
 const Events = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
+  const [showAcknowledgment, setShowAcknowledgment] = useState(false);
 
   const handleEnrollment = (event) => {
+    if (event.id === 'epilogue') {
+      setShowAcknowledgment(true);
+      return;
+    }
     if (event.konfhubUrl) {
       window.open(event.konfhubUrl, '_blank', 'noopener,noreferrer');
     }
   };
 
   React.useEffect(() => {
-    if (selectedEvent) {
+    if (selectedEvent || showAcknowledgment) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
     }
-  }, [selectedEvent]);
+  }, [selectedEvent, showAcknowledgment]);
 
   return (
     <section id="events" className="py-24 bg-transparent relative">
@@ -291,7 +296,7 @@ const Events = () => {
                       <div className="flex flex-col sm:flex-row gap-4">
                         <button 
                           onClick={() => handleEnrollment(selectedEvent)}
-                          className="flex-1 flex items-center justify-center gap-3 px-6 py-4 bg-hp-gold-500 text-hp-bg font-serif font-bold text-lg rounded shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:bg-hp-gold-300 transition-all duration-300 transform hover:-translate-y-0.5"
+                          className="flex-1 flex items-center justify-center gap-3 px-6 py-4 bg-hp-gold-500 text-hp-bg font-serif font-bold text-lg rounded shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:bg-hp-gold-300 transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer"
                         >
                           <UserPlus className="w-5 h-5" />
                           Enroll Now
@@ -331,6 +336,32 @@ const Events = () => {
                   </div>
                 </div>
               </div>
+            </motion.div>
+          </div>
+        )}
+
+        {/* Epilogue Acknowledgment Modal */}
+        {showAcknowledgment && (
+          <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+            <motion.div 
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="bg-hp-bg-modal border border-hp-gold-500/30 p-8 rounded-lg max-w-md w-full text-center shadow-[0_0_50px_rgba(212,175,55,0.2)]"
+            >
+              <div className="w-16 h-16 bg-hp-gold-500/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Sparkles className="w-8 h-8 text-hp-gold-500" />
+              </div>
+              <h3 className="text-2xl font-serif text-hp-gold-300 mb-4">Interest Acknowledged</h3>
+              <p className="text-hp-text-light font-sans leading-relaxed mb-8">
+                Thank you for your intrest. Once your abstract is selected, one of our co-ordinators will guide you through the further process.
+              </p>
+              <button 
+                onClick={() => setShowAcknowledgment(false)}
+                className="w-full py-3 bg-hp-gold-500 text-hp-bg font-serif font-bold rounded hover:bg-hp-gold-300 transition-all shadow-lg active:scale-95 cursor-pointer"
+              >
+                OK
+              </button>
             </motion.div>
           </div>
         )}
