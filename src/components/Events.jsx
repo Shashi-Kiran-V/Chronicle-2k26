@@ -17,13 +17,13 @@ const events = [
     category: 'Arithmancy & Logic',
     icon: Code2,
     poster: binaryTalesPoster,
-    description: 'A unique programming contest intertwined with magical lore. Solve algorithmic challenges wrapped in intriguing Hogwarts narratives.',
+    description: 'Binary Tales is a competitive coding event where logic meets creativity, challenging participants to solve real-world problems through efficient algorithms. Test your skills, race against time, and turn your code into powerful solutions.',
     color: 'emerald',
     konfhubUrl: 'https://konfhub.com/checkout/chronicle-2k26?ticketId=93750',
     details: {
-      location: 'CSE Department',
+      location: 'ISE Department',
       eligibility: 'Open to all branches of BE and Diploma',
-      teamSize: '2-4',
+      teamSize: '1-2',
       fee: '₹50'
     }
   },
@@ -33,30 +33,30 @@ const events = [
     category: 'Transfiguration',
     icon: MonitorPlay,
     poster: epiloguePoster,
-    description: 'A platform to showcase your innovative projects. Present your final transfigurations to our wizengamot jury and prove your worth.',
+    description: 'A platform to explore ideas and turn them into reality—where creativity meets problem-solving. Test your skills, innovate boldly, and create solutions that make a difference.',
     color: 'blue',
     konfhubUrl: 'https://konfhub.com/checkout/chronicle-2k26?ticketId=93745',
     details: {
-      location: 'CSE Department',
+      location: 'Media centre',
       eligibility: 'Open to all branches of BE and Diploma',
       teamSize: '2-4',
-      fee: '₹50'
+      fee: '₹100'
     }
   },
   {
     id: 'verbal-arena',
     title: 'Verbal Arena',
-    category: 'Charms & Debate',
+    category: 'Debate',
     icon: MessageSquare,
     poster: verbalArenaPoster,
-    description: 'Cross wands with words. Participate in this fierce debate competition and demonstrate your rhetorical prowess on wizarding world topics.',
+    description: 'Verbal Arena is an exciting debate event where participants showcase their ideas, logic, and persuasive speaking skills. Step into the arena, challenge perspectives, and express your arguments with creativity, confidence, and critical thinking.',
     color: 'rose',
     konfhubUrl: 'https://konfhub.com/checkout/chronicle-2k26?ticketId=93748',
     details: {
-      location: 'CSE Department',
+      location: 'ISE Department',
       eligibility: 'Open to all branches of BE and Diploma',
-      teamSize: '2-4',
-      fee: '₹50'
+      teamSize: '1',
+      fee: '₹30'
     }
   },
   {
@@ -65,30 +65,30 @@ const events = [
     category: 'Dark Arts Design',
     icon: Paintbrush,
     poster: recraftPoster,
-    description: 'Unleash your creativity in our spellbook cover design competition. Redesign classic tomes or breathe life into new cursed texts.',
+    description: 'ReCraft is a two-stage creative challenge where participants first crack a book-based puzzle and then design a cover inspired by a given story. It focuses on quick thinking, originality, and the ability to express ideas visually.',
     color: 'amber',
     konfhubUrl: 'https://konfhub.com/checkout/chronicle-2k26?ticketId=93749',
     details: {
-      location: 'CSE Department',
+      location: 'ISE Department',
       eligibility: 'Open to all branches of BE and Diploma',
-      teamSize: '2-4',
-      fee: '₹50'
+      teamSize: '2',
+      fee: '₹30'
     }
   },
   {
     id: 'hidden-chapters',
     title: 'Hidden Chapters',
-    category: 'Marauders Hunt',
+    category: 'Treasure Hunt',
     icon: Compass,
     poster: hiddenChapterPoster,
-    description: 'A thrilling treasure hunt testing your wits. Solve cryptic runic clues hidden across the castle grounds to find the lost chapters.',
+    description: 'Hidden Chapters is a treasure hunt where participants follow clues, explore locations, and solve puzzles to reach the final hidden spot. It tests your observation, thinking, and teamwork skills.',
     color: 'violet',
     konfhubUrl: 'https://konfhub.com/checkout/chronicle-2k26?ticketId=93746',
     details: {
-      location: 'CSE Department',
+      location: 'Birla Auditorium',
       eligibility: 'Open to all branches of BE and Diploma',
-      teamSize: '2-4',
-      fee: '₹50'
+      teamSize: '3',
+      fee: '₹60'
     }
   },
   {
@@ -97,14 +97,14 @@ const events = [
     category: 'Divination',
     icon: ImageIcon,
     poster: storiesUntoldPoster,
-    description: 'A picture is worth a thousand spells. Perceive the subtle prophecies hidden within imagery and draft compelling, imaginative visions.',
+    description: 'Stories Untold is a creative speaking event where imagination meets expression, challenging participants to turn a single image into a compelling story. Observe deeply, think quickly, and bring your perspective to life through words.',
     color: 'teal',
     konfhubUrl: 'https://konfhub.com/checkout/chronicle-2k26?ticketId=93747',
     details: {
-      location: 'CSE Department',
+      location: 'ISE Department',
       eligibility: 'Open to all branches of BE and Diploma',
-      teamSize: '2-4',
-      fee: '₹50'
+      teamSize: '1',
+      fee: '₹30'
     }
   }
 ];
