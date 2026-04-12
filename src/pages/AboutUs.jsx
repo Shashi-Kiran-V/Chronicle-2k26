@@ -64,7 +64,7 @@ const AboutUsPage = () => {
                   className="text-lg text-hp-text-light font-sans leading-relaxed text-justify"
                   variants={itemVariants}
                 >
-                  Whether you enjoy fiction, non-fiction, poetry, or essays, our platform offers a space to explore new perspectives, discover unique books, and connect with like-minded individuals. Members can actively participate by suggesting books, contributing ideas, leading discussions or workshops, and sharing reviews, making every experience collaborative and enriching.
+                  Whether you enjoy fiction, non-fiction, poetry, or essays, our platform offers a space to explore new perspectives, discovery unique books, and connect with like-minded individuals. Members can actively participate by suggesting books, contributing ideas, leading discussions or workshops, and sharing reviews, making every experience collaborative and enriching.
                 </motion.p>
 
                 <motion.p 
