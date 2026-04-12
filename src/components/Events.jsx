@@ -86,10 +86,10 @@ const EventCard = ({ event, onViewDetails }) => {
       <div className="mt-auto pt-4 border-t border-hp-gold-700/20">
         <button 
           onClick={() => onViewDetails(event)} 
-          className="text-hp-gold-500 font-sans tracking-wide text-sm flex items-center hover:text-hp-gold-300 transition-colors focus:outline-none"
+          className="w-full px-4 py-2 bg-hp-bg-alt border border-hp-gold-700/50 text-hp-gold-300 font-serif hover:bg-hp-bg hover:border-hp-gold-500 transition-all shadow-md flex items-center justify-center gap-2"
         >
           Reveal Secrets
-          <Sparkles className="w-4 h-4 ml-2 group-hover:rotate-12 transition-transform opacity-70" />
+          <Sparkles className="w-4 h-4 opacity-70" />
         </button>
       </div>
     </div>
