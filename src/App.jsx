@@ -8,6 +8,7 @@ import MagicBackground from './components/MagicBackground'
 import ContactUs from './components/ContactUs'
 import Home from './pages/Home'
 import AboutUs from './pages/AboutUs'
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -15,6 +16,7 @@ function App() {
 
   return (
     <div className="relative min-h-screen scroll-smooth bg-hp-bg font-sans text-hp-text-light overflow-x-hidden cursor-none">
+      <ScrollToTop />
       <CustomCursor />
       
       {/* Global Magical Animated Background */}
