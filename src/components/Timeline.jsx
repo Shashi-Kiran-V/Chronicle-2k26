@@ -3,46 +3,28 @@ import { motion } from 'framer-motion';
 
 const timelineData = [
   {
-    time: "09:00 AM",
-    title: "Opening Ceremony",
-    description: "Welcome address and magical inauguration of The Chronicle 2K26 in the Great Hall.",
-    type: "general"
-  },
-  {
-    time: "10:30 AM",
-    title: "Binary Tales Begins",
-    description: "First round of the algorithmic logic contest. Wands and keyboards ready.",
+    time: "08th April 2026",
+    title: "Registration Start Date",
+    description: "The gates to The Chronicle 2K26 are officially open. Begin your mystical journey.",
     type: "event"
   },
   {
-    time: "11:00 AM",
-    title: "Recraft Design Phase",
-    description: "Designers commence work on their curse-breaking spellbook covers.",
+    time: "17th April 2026",
+    title: "Last date for Abstract Submission for Epilogue",
+    description: "Final deadline to submit your innovative project abstracts for the Transfiguration showcase.",
     type: "event"
   },
   {
-    time: "01:00 PM",
-    title: "The Grand Feast",
-    description: "Networking and refreshments at the Great Hall.",
-    type: "general"
-  },
-  {
-    time: "02:30 PM",
-    title: "Verbal Arena & Epilogue",
-    description: "Debates ignite while transfiguration projects are presented to the Wizengamot.",
+    time: "21st April 2026",
+    title: "Last date for Events Enrolment",
+    description: "Final deadline to enrol in the various magical challenges and contests.",
     type: "event"
   },
   {
-    time: "04:30 PM",
-    title: "Hidden Chapters Hunt",
-    description: "The grand marauders hunt begins across the castle grounds.",
+    time: "22nd April 2026",
+    title: "Chronicle-2K26",
+    description: "The grand day of The Chronicle 2K26. All events and ceremonies commence.",
     type: "event"
-  },
-  {
-    time: "06:00 PM",
-    title: "Award Ceremony",
-    description: "House cup distribution and closing remarks. Mischief to be managed.",
-    type: "general"
   }
 ];
 
