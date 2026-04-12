@@ -4,24 +4,40 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const faqs = [
   {
-    question: "Who can participate in The Chronicle 2K26?",
-    answer: "Any witch or wizard currently enrolled in a valid magical or muggle academic institution can participate. Bring your wands (student IDs) for verification."
+    question: "Who can join the Chronicle?",
+    answer: "Any brave witch, wizard, or muggle from any college. No letter from an owl required"
   },
   {
-    question: "Do I have to participate in all events?",
-    answer: "No, you may choose to specialize! You can enroll in individual challenges or form a triad for multiple events."
+    question: "How do I register?",
+    answer: "No spells needed. Just click on the Register button and fill the form. (Saying \"I solemnly swear I am up to no good\" is optional.)"
   },
   {
-    question: "What is the registration fee?",
-    answer: "Golden galleons are not required. The event is completely free of charge. We primarily value your magical dedication and skills."
+    question: "Can I participate in multiple events?",
+    answer: "Of course! Even Hermione signed up for everything."
   },
   {
-    question: "What equipment should I bring?",
-    answer: "For design and logic challenges, bringing your own enchanted device (laptop) is highly recommended. We will provide Wi-Fi access to the global floo network."
+    question: "What is this \"abstract\" you speak of?",
+    answer: "It's like your spell plan. Tell us your idea in short according to abstract theme, no need to write the entire Standard Book of Spells."
   },
   {
-    question: "Who do I contact if I have questions?",
-    answer: "You can send an owl to our prefects via the Contact Us section below, or speak to any organizer wearing a golden badge on the day of the event."
+    question: "When is the last date to register?",
+    answer: "Check the timeline on the website. If you miss it, not even Dumbledore can help you"
+  },
+  {
+    question: "Are there prizes?",
+    answer: "Obviously. Eternal glory, house points, and maybe actual prizes too"
+  },
+  {
+    question: "How will I know if I'm selected?",
+    answer: "No owls, sorry. You'll be notified through email or WhatsApp, keep your wands (phones) ready."
+  },
+  {
+    question: "Will I get a certificate?",
+    answer: "Yes. Something even better than a Chocolate Frog card"
+  },
+  {
+    question: "Who do I contact if I'm confused?",
+    answer: "Reach out to the event coordinators. Please don't try to summon them with a spell."
   }
 ];
 
