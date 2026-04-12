@@ -41,12 +41,12 @@ const TimelineCard = ({ item, index }) => {
     >
       
       {/* Connector and Node */}
-      <div className="absolute left-8 md:left-1/2 top-8 transform md:-translate-x-1/2 z-20 flex flex-col items-center">
+      <div className="absolute left-8 md:left-1/2 top-8 -translate-x-1/2 z-20 flex flex-col items-center">
         <div className="w-4 h-4 rounded-full bg-hp-gold-500 shadow-[0_0_10px_rgba(212,175,55,0.8)] border-2 border-hp-bg group-hover:scale-125 transition-transform duration-300"></div>
       </div>
       
       {/* Content Card */}
-      <div className={`w-full md:w-[45%] pl-16 md:pl-0 ${isEven ? 'md:mr-auto' : 'md:ml-auto'}`}>
+      <div className={`w-full md:w-[calc(50%-12px)] pl-16 md:p-0 ${isEven ? 'md:mr-auto md:pr-6' : 'md:ml-auto md:pl-6'}`}>
         <motion.div 
           whileHover={{ y: -5 }}
           className={`bg-hp-bg-card border border-hp-gold-700/30 p-6 rounded relative overflow-hidden shadow-md hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition-all ${item.type === 'event' ? 'border-l-4 border-l-hp-slytherin' : 'border-l-4 border-l-hp-gryffindor'}`}
