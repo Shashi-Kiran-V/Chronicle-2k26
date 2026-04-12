@@ -210,7 +210,7 @@ const Events = () => {
                         Download Abstract
                       </a>
                       <a 
-                        href="https://docs.google.com/forms" 
+                        href="https://forms.gle/FA283Cdm3X5LTmo69" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="flex-1 min-w-[200px] flex items-center justify-center gap-2 px-4 py-4 bg-hp-bg-alt border border-hp-gold-700/50 text-hp-gold-300 font-serif hover:bg-hp-bg hover:border-hp-gold-500 transition-all shadow-md text-sm md:text-base whitespace-nowrap"
