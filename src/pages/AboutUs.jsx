@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Footer from '../components/Footer';
+import bookcultAboutUsImg from '../assets/bookcult_about_us.jpeg';
+import sitBookcultImg from '../assets/SIT_Bookcult.jpeg';
 
 const AboutUsPage = () => {
   const containerVariants = {
@@ -43,34 +45,50 @@ const AboutUsPage = () => {
               variants={itemVariants}
             ></motion.div>
 
-            <motion.div 
-              className="space-y-6"
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-            >
-              <motion.p 
-                className="text-lg text-hp-text-light font-sans leading-relaxed text-justify"
-                variants={itemVariants}
+            <div className="flex flex-col-reverse lg:flex-row gap-12 items-center">
+              <motion.div 
+                className="flex-1 space-y-6"
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
               >
-                The Book Cult is a vibrant community of passionate readers brought together by a shared love for literature, ideas, and meaningful conversations. We go beyond just reading by hosting engaging activities such as monthly book-of-the-month discussions, interactive literary games, themed reading events, and exclusive author interactions.
-              </motion.p>
+                <motion.p 
+                  className="text-lg text-hp-text-light font-sans leading-relaxed text-justify"
+                  variants={itemVariants}
+                >
+                  The Book Cult is a vibrant community of passionate readers brought together by a shared love for literature, ideas, and meaningful conversations. We go beyond just reading by hosting engaging activities such as monthly book-of-the-month discussions, interactive literary games, themed reading events, and exclusive author interactions.
+                </motion.p>
 
-              <motion.p 
-                className="text-lg text-hp-text-light font-sans leading-relaxed text-justify"
-                variants={itemVariants}
-              >
-                Whether you enjoy fiction, non-fiction, poetry, or essays, our platform offers a space to explore new perspectives, discover unique books, and connect with like-minded individuals. Members can actively participate by suggesting books, contributing ideas, leading discussions or workshops, and sharing reviews, making every experience collaborative and enriching.
-              </motion.p>
+                <motion.p 
+                  className="text-lg text-hp-text-light font-sans leading-relaxed text-justify"
+                  variants={itemVariants}
+                >
+                  Whether you enjoy fiction, non-fiction, poetry, or essays, our platform offers a space to explore new perspectives, discover unique books, and connect with like-minded individuals. Members can actively participate by suggesting books, contributing ideas, leading discussions or workshops, and sharing reviews, making every experience collaborative and enriching.
+                </motion.p>
 
-              <motion.p 
-                className="text-lg text-hp-text-light font-sans leading-relaxed text-justify"
+                <motion.p 
+                  className="text-lg text-hp-text-light font-sans leading-relaxed text-justify"
+                  variants={itemVariants}
+                >
+                  At its core, The Book Cult fosters creativity, critical thinking, and a deeper appreciation for storytelling in a dynamic and inspiring environment.
+                </motion.p>
+              </motion.div>
+
+              <motion.div 
+                className="flex-1 w-full max-w-md"
                 variants={itemVariants}
               >
-                At its core, The Book Cult fosters creativity, critical thinking, and a deeper appreciation for storytelling in a dynamic and inspiring environment.
-              </motion.p>
-            </motion.div>
+                <div className="relative group">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-hp-gold-500/20 to-hp-gold-500/0 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                  <img 
+                    src={bookcultAboutUsImg} 
+                    alt="Book Cult Community" 
+                    className="relative rounded-2xl border border-hp-gold-500/30 shadow-2xl w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
+                </div>
+              </motion.div>
+            </div>
           </motion.div>
 
           {/* Divider */}
@@ -103,27 +121,43 @@ const AboutUsPage = () => {
               variants={itemVariants}
             ></motion.div>
 
-            <motion.div 
-              className="space-y-6"
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-            >
-              <motion.p 
-                className="text-lg text-hp-text-light font-sans leading-relaxed text-justify"
-                variants={itemVariants}
+            <div className="flex flex-col-reverse lg:flex-row-reverse gap-12 items-center">
+              <motion.div 
+                className="flex-1 space-y-6"
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
               >
-                Siddaganga Institute of Technology has a rich heritage of bestowing knowledge and passion to young minds. Its motto <span className="text-hp-gold-500 font-semibold italic">'Work is Worship'</span> is ingrained into the minds of every student, thus creating an inclusive and empowering community for students that encourages growth and achievement.
-              </motion.p>
+                <motion.p 
+                  className="text-lg text-hp-text-light font-sans leading-relaxed text-justify"
+                  variants={itemVariants}
+                >
+                  Siddaganga Institute of Technology has a rich heritage of bestowing knowledge and passion to young minds. Its motto <span className="text-hp-gold-500 font-semibold italic">'Work is Worship'</span> is ingrained into the minds of every student, thus creating an inclusive and empowering community for students that encourages growth and achievement.
+                </motion.p>
 
-              <motion.p 
-                className="text-lg text-hp-text-light font-sans leading-relaxed text-justify"
+                <motion.p 
+                  className="text-lg text-hp-text-light font-sans leading-relaxed text-justify"
+                  variants={itemVariants}
+                >
+                  The unwavering assistance from professors and administrators played a significant role in building the confidence and perspective of every individual.
+                </motion.p>
+              </motion.div>
+
+              <motion.div 
+                className="flex-1 w-full max-w-md"
                 variants={itemVariants}
               >
-                The unwavering assistance from professors and administrators played a significant role in building the confidence and perspective of every individual.
-              </motion.p>
-            </motion.div>
+                <div className="relative group">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-hp-gold-500/20 to-hp-gold-500/0 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                  <img 
+                    src={sitBookcultImg} 
+                    alt="SIT Campus" 
+                    className="relative rounded-2xl border border-hp-gold-500/30 shadow-2xl w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
+                </div>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </section>
