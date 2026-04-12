@@ -214,12 +214,12 @@ const Events = () => {
             >
               <button 
                 onClick={() => setSelectedEvent(null)}
-                className="absolute top-4 right-4 z-[110] p-2 bg-hp-bg-alt/80 border border-hp-gold-700/30 rounded text-hp-gold-500 hover:text-hp-gold-300 hover:bg-hp-bg-card transition-colors shadow-lg cursor-pointer"
+                className="absolute top-3 right-3 z-[110] p-1.5 bg-hp-bg-alt/90 border border-hp-gold-700/50 rounded text-hp-gold-500 hover:text-hp-gold-300 hover:bg-hp-bg-card transition-all shadow-xl cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
 
-              <div className="overflow-y-auto w-full h-full custom-scrollbar relative z-10 p-6 md:p-8">
+              <div className="overflow-y-auto w-full h-full custom-scrollbar relative z-10 p-6 pt-14 md:p-10 md:pt-16">
                 <div className="flex flex-col lg:flex-row gap-10">
                   {/* Portrait Poster Section */}
                   <div className="lg:w-1/2 flex justify-center items-center">
