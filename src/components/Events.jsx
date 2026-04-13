@@ -10,11 +10,6 @@ import recraftPoster from '../assets/recraft.png';
 import storiesUntoldPoster from '../assets/stories untold.png';
 import verbalArenaPoster from '../assets/verbal arena.png';
 
-// Import brochures
-import binaryTalesBrochure from '../assets/brochures/Binary_Tales_Brochure.pdf';
-import epilogueBrochure from '../assets/brochures/Epilogue_Brochure.pdf';
-import hiddenChapterBrochure from '../assets/brochures/Hidden_Chapter_Brochure.pdf';
-
 const events = [
   {
     id: 'binary-tales',
@@ -22,7 +17,7 @@ const events = [
     category: 'Arithmancy & Logic',
     icon: Code2,
     poster: binaryTalesPoster,
-    brochure: binaryTalesBrochure,
+    brochure: '/brochures/Binary_Tales_Brochure.pdf',
     description: 'Binary Tales is a competitive coding event where logic meets creativity, challenging participants to solve real-world problems through efficient algorithms. Test your skills, race against time, and turn your code into powerful solutions.',
     color: 'emerald',
     konfhubUrl: 'https://konfhub.com/checkout/chronicle-2k26?ticketId=93750',
@@ -39,7 +34,7 @@ const events = [
     category: 'Transfiguration',
     icon: MonitorPlay,
     poster: epiloguePoster,
-    brochure: epilogueBrochure,
+    brochure: '/brochures/Epilogue_Brochure.pdf',
     description: 'A platform to explore ideas and turn them into reality—where creativity meets problem-solving. Test your skills, innovate boldly, and create solutions that make a difference.',
     color: 'blue',
     konfhubUrl: 'https://konfhub.com/checkout/chronicle-2k26?ticketId=93745',
@@ -88,7 +83,7 @@ const events = [
     category: 'Treasure Hunt',
     icon: Compass,
     poster: hiddenChapterPoster,
-    brochure: hiddenChapterBrochure,
+    brochure: '/brochures/Hidden_Chapter_Brochure.pdf',
     description: 'Hidden Chapters is a treasure hunt where participants follow clues, explore locations, and solve puzzles to reach the final hidden spot. It tests your observation, thinking, and teamwork skills.',
     color: 'violet',
     konfhubUrl: 'https://konfhub.com/checkout/chronicle-2k26?ticketId=93746',
