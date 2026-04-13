@@ -295,11 +295,11 @@ const Events = () => {
                     </div>
 
                     {/* Buttons Section */}
-                    <div className="mt-auto space-y-4">
-                      <div className="flex flex-col sm:flex-row gap-4">
+                    <div className="mt-auto">
+                      <div className={`grid grid-cols-1 ${selectedEvent.id === 'epilogue' ? 'sm:grid-cols-2' : 'sm:grid-cols-2'} gap-4`}>
                         <button 
                           onClick={() => handleEnrollment(selectedEvent)}
-                          className="flex-1 flex items-center justify-center gap-3 px-6 py-4 bg-hp-gold-500 text-hp-bg font-serif font-bold text-lg rounded shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:bg-hp-gold-300 transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer"
+                          className="flex items-center justify-center gap-2 px-4 py-3 bg-hp-gold-500 text-hp-bg font-serif font-bold rounded shadow-[0_0_15px_rgba(212,175,55,0.2)] hover:bg-hp-gold-300 transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer text-base"
                         >
                           <UserPlus className="w-5 h-5" />
                           Enroll Now
@@ -308,34 +308,34 @@ const Events = () => {
                         <a 
                           href={selectedEvent.brochure || "#omniocular-rules"} 
                           download={selectedEvent.brochure ? `${selectedEvent.title}_Brochure.pdf` : undefined}
-                          className="flex-1 flex items-center justify-center gap-3 px-6 py-4 bg-hp-bg-alt border border-hp-gold-700/50 text-hp-gold-300 font-serif rounded hover:bg-hp-bg hover:border-hp-gold-500 transition-all duration-300"
+                          className="flex items-center justify-center gap-2 px-4 py-3 bg-hp-bg-alt border border-hp-gold-700/50 text-hp-gold-300 font-serif rounded hover:bg-hp-bg hover:border-hp-gold-500 transition-all duration-300 text-base"
                         >
                           <Download className="w-5 h-5" />
                           Owl Brochure
                         </a>
-                      </div>
 
-                      {selectedEvent.id === 'epilogue' && (
-                        <div className="flex flex-col sm:flex-row gap-4">
-                          <a 
-                            href="/Epilogue_Abstract_Template.docx" 
-                            download
-                            className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-hp-bg-alt border border-hp-gold-700/30 text-hp-gold-300 font-serif text-sm rounded hover:bg-hp-bg transition-all"
-                          >
-                            <Download className="w-4 h-4 opacity-70" />
-                            Abstract Template
-                          </a>
-                          <a 
-                            href="https://forms.gle/FA283Cdm3X5LTmo69" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-hp-bg-alt border border-hp-gold-700/30 text-hp-gold-300 font-serif text-sm rounded hover:bg-hp-bg transition-all"
-                          >
-                            <Upload className="w-4 h-4 opacity-70" />
-                            Submit Abstract
-                          </a>
-                        </div>
-                      )}
+                        {selectedEvent.id === 'epilogue' && (
+                          <>
+                            <a 
+                              href="/Epilogue_Abstract_Template.docx" 
+                              download
+                              className="flex items-center justify-center gap-2 px-4 py-3 bg-hp-bg-alt border border-hp-gold-700/30 text-hp-gold-300 font-serif rounded hover:bg-hp-bg transition-all text-base"
+                            >
+                              <Download className="w-5 h-5 opacity-70" />
+                              Abstract Template
+                            </a>
+                            <a 
+                              href="https://forms.gle/FA283Cdm3X5LTmo69" 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="flex items-center justify-center gap-2 px-4 py-3 bg-hp-bg-alt border border-hp-gold-700/30 text-hp-gold-300 font-serif rounded hover:bg-hp-bg transition-all text-base"
+                            >
+                              <Upload className="w-5 h-5 opacity-70" />
+                              Submit Abstract
+                            </a>
+                          </>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
