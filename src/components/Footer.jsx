@@ -48,12 +48,7 @@ const Footer = () => {
 
         {/* Combined Contact Box - Ultra Compact */}
         <div className="max-w-xs mx-auto p-3 rounded-lg border border-hp-gold-500/10 bg-hp-bg/30 mb-5">
-          <div className="flex flex-row justify-around gap-4 text-center">
-            <div>
-              <p className="text-hp-text-light font-bold text-[10px] uppercase tracking-tighter">Shashikiran V</p>
-              <a href="tel:9148132869" className="text-hp-text-muted hover:text-hp-gold-300 text-[11px]">9148132869</a>
-            </div>
-            <div className="w-px h-6 bg-hp-gold-500/10 self-center"></div>
+          <div className="flex flex-row justify-center text-center">
             <div>
               <p className="text-hp-text-light font-bold text-[10px] uppercase tracking-tighter">Suchithra B S</p>
               <a href="tel:9731241864" className="text-hp-text-muted hover:text-hp-gold-300 text-[11px]">9731241864</a>
